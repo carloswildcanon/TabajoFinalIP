@@ -192,22 +192,5 @@ switch($opcion){
 }
 
 
-$objPasajero1=new Pasajero("lolo","gyu",21454,5874);
-$objPasajero2=new Pasajero("lalo","yuh",1234,2541);
-$pasajeros=[$objPasajero1,$objPasajero2];
-$objResponsable=new REsposableV(21,23652,"juan","perez");
-$objViaje=new Viaje(256,"peru",10,$pasajeros,$objResponsable);
-$obj1=$objViaje->buscarPasajeroPorDni(1234);
-echo $obj1->__toString(). "\n";
-$X=[];
-echo count($X)."\n";
-if(true != null){
-    echo "si\n";
-}
-if(false == null){
-    echo "si\n";
-}
-opcionesPasajero();
-modificacionPasajeroVip($objPasajero1);
 
 ?>
