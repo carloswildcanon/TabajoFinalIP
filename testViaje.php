@@ -123,7 +123,7 @@ $objPasajero1=new PasajeroVip("lolo","gyu",21454,5874,78,500);
 $objPasajero2=new PasajeroEspecial("lalo","yuh",1234,2541,"no","si");
 $pasajeros=[$objPasajero1,$objPasajero2];
 $objResponsable=new REsposableV(21,23652,"juan","perez");
-$objViaje1=new Viaje(256,"peru",10,$pasajeros,$objResponsable);
+$objViaje1=new Viaje(256,"peru",10,$pasajeros,$objResponsable,120,null);
 //$objViaje1=new Viaje(1,null,null,null,null);
 echo "|-------------------------------------|\n\n";
 echo "     Bienvenidos a Viaje Feliz\n\n";
