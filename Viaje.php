@@ -65,6 +65,15 @@ class Viaje{
         
         return $pasajero;
     }
+
+    public function ingresarPasajero($objPasajero){
+        $colPasajero=$this->getPasajeros();
+        if($colPasajero == null){
+            $colPasajero=[];
+        }
+        array_push($colPasajero,$objPasajero);
+        $this->setPasajeros($colPasajero);
+    }
     /*
     public function cambiarNombrePasajero($dniPasajero,$nombreNuevo){
         $pasajero=$this->buscarPasajeroPorDni($dniPasajero);
