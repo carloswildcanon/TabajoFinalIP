@@ -119,11 +119,12 @@ function modificarPorelTipoPasajero($tipo,$objPasajero){
             break;
     }
 }
+/*
 $objPasajero1=new PasajeroVip("lolo","gyu",21454,5874,78,500);
 $objPasajero2=new PasajeroEspecial("lalo","yuh",1234,2541,"no","si");
-$pasajeros=[$objPasajero1,$objPasajero2];
+$pasajeros=[$objPasajero1,$objPasajero2];*/
 $objResponsable=new REsposableV(21,23652,"juan","perez");
-$objViaje1=new Viaje(256,"peru",10,$pasajeros,$objResponsable,120,null);
+$objViaje1=new Viaje(256,"peru",10,null,$objResponsable,120,null);
 //$objViaje1=new Viaje(1,null,null,null,null);
 echo "|-------------------------------------|\n\n";
 echo "     Bienvenidos a Viaje Feliz\n\n";
@@ -132,11 +133,15 @@ echo "Elija la accion que se desea realizar:\n";
 echo "-Ingrese 0 para mostrar los datos del viaje \n";
 echo "-Ingrese 1 Si quiere modificar el codigo del viaje. \n";
 echo "-ingrese 2 Si desea modificar el destino. \n";
-echo "-Ingrese 3 si desea modificar o agregar pasajero.\n";
-echo "-Ingrese 4 si desea modificar el responsable del viaje.\n";
-echo "-Ingrese 5 para Salir \n";
+echo "-ingrese 3 si desea modificar el costa pasaje.\n";
+echo "-Ingrese 4 si desea modificar o agregar pasajero.\n";
+echo "-Ingrese 5 si desea modificar el responsable del viaje.\n";
+echo "-Ingrese 6 para Salir \n";
 $opcion=trim(fgets(STDIN));
 switch($opcion){
+    case 0:
+        echo "en construccion.\n";
+        break;
     case 1:
         $codigo=$objViaje1->getCodigoViaje();
         if($codigo==null){
@@ -172,6 +177,23 @@ switch($opcion){
         }
         break;
     case 3:
+        $costo=$objViaje1->getCostoViaje();
+        if($costo==null){
+            echo "No hay costo pasaje asigando: \n"; 
+            echo "Ingrese el costo del pasaje: ";
+            $ncosto=trim(fgets(STDIN));
+            $objViaje1->setCostoViaje($ncosto);
+            echo "El nuevo costo del pasaje es: ". $objViaje1->getCostoViaje(). "\n";
+            
+        }else{
+            echo "Costo de pasaje actual: ". $costo. "\n";
+            echo  "Ingrese el costo del pasaje: ";
+            $ncosto=trim(fgets(STDIN));
+            $objViaje1->setCostoViaje($ncosto);
+            echo "El nuevo costo del pasaje es: ". $objViaje1->getCostoViaje(). "\n";
+        }
+        break;
+    case 4:
         echo "-Ingrese 1 si quiere modificar los datos de un pasajero\n";
         echo "-Ingrese 2 si quiere ingresar un pasajero nuevo\n";
         $nuevaOpcion=trim(fgets(STDIN));
@@ -186,9 +208,14 @@ switch($opcion){
                     $tipoPasajero=saberTipoPasajero($pasjeroBuscado);
                     modificarPorelTipoPasajero($tipoPasajero,$pasjeroBuscado);
                 }
+            case 2:
+                echo "en construccion.\n";
+                break;
         }
 
-    case 4:    
+    case 5:
+        echo "en construccion.\n";
+        break;    
 }
 
 

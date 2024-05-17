@@ -116,6 +116,9 @@ class Viaje{
                 $costo=$this->getCostoViaje();
                 $precio=$costo*(1+$porcentajeAumento/100);
                 $this->ingresarPasajero($objPasajero);
+                $sumaPasajes=$this->getSumaPasajesVendidos();
+                $sumaPasajes+=$precio;
+                $this->setSumaPasajesVendidos($sumaPasajes);
             }
         }
         return $precio;
